@@ -62,4 +62,25 @@ app.delete("/todo/:id", (req, res) => {
   }
 });
 
+app.get("/todo/search/:key", (req, res) => {
+  let key = req.params.key;
+  var find = todoList.find(word => word.todo.toLowerCase().includes(key));
+  if(find){
+    res.send( {sucess: true, message: "Found", result: find })
+  }else{
+    res.send( {success: false, message: "Not Found"})
+  }
+})
+
+app.get("/todo/update/:id", (req, res) => {
+  let index = req.params.key;
+  var update = //
+  if(find){
+    res.send( {sucess: true, message: "Found", result: find })
+  }else{
+    res.send( {success: false, message: "Not Found"})
+  }
+})
+
+
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
